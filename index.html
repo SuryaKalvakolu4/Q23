@@ -26,14 +26,14 @@
     </style>
 </head>
 <body>
-    <h1>Station 10</h1>
+    <h1>Pressure Switch of the Compressed Air System</h1>
     <div id="question"></div>
     <div id="options"></div>
-    <button onclick="nextQuestion()">SUBMIT</button>
+    <button onclick="nextQuestion()">Submit</button>
     <script>
         // Function to clear the quiz score from local storage
 function clearQuizScore() {
-    localStorage.removeItem("Station_10_Score");
+    localStorage.removeItem("Pressure_Switch");
 }
 
 // Function to clear local storage when the tab is closed or refreshed
@@ -49,13 +49,13 @@ window.addEventListener('beforeunload', function() {
         const quiz = [
             {
                 question: "Here, the filter medium is swirled with the help of a _______________ and the sludge water is then disposed of via the side drain.",
-                options: ["Water-air mixture", "Gas mixture", "special detergent"],
+                options: ["Water-Air Mixture", "Gas Mixture", "special Detergent"],
                 answer: 1
             }
         ];
 
         let currentQuestion = 0;
-        let Station_10_Score = 0;
+        let Pressure_Switch = 0;
 
         // Function to display current question
         function displayQuestion() {
@@ -99,9 +99,9 @@ window.addEventListener('beforeunload', function() {
     }
 
     if (!isAnswered || selectedOption !== quiz[currentQuestion].answer) {
-        Station_10_Score = 0; // Assign zero score if question is not attempted or answered incorrectly
+        Pressure_Switch = 0; // Assign zero score if question is not attempted or answered incorrectly
     } else {
-        Station_10_Score++; // Increment score for correct answer
+        Pressure_Switch++; // Increment score for correct answer
     }
 }
 
@@ -112,8 +112,8 @@ window.addEventListener('beforeunload', function() {
 
             if (currentQuestion === quiz.length) {
                 // All questions answered, store score in local storage
-                localStorage.setItem("Station_10_Score", Station_10_Score);
-                alert("Quiz completed. Your score is " + Station_10_Score);
+                localStorage.setItem("Pressure_Switch", Pressure_Switch);
+                alert("Quiz completed. Your score is " + Pressure_Switch);
             } else {
                 displayQuestion();
             }
